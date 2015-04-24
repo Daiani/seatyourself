@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'frontpage/index'
+
+  get 'frontpage/show'
+
+  get 'frontpage/new'
+
+  get 'frontpage/edit'
+
+root 'frontpage#index'
+
  resources :restaurant, only: [:new, :create]
 
   resources :users, only: [:new, :create]
