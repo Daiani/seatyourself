@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :frontpage
 
- resources :restaurant, only: [:new, :create]
+ resources :restaurants, only: [:new, :create, :show, :index]
 
   resources :users, only: [:new, :create]
   resources :reservations
