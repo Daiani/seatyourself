@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'frontpage/index'
+  root 'frontpage#index'
 
-  get 'frontpage/show'
-
-  get 'frontpage/new'
-
-  get 'frontpage/edit'
-
-root 'frontpage#index'
+  resources :frontpage
 
  resources :restaurant, only: [:new, :create]
 
