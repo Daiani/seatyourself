@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
 			)
 
 		if @reservation.save
-			current_user.add_points(@reservation.points)
+			# current_user.add_points(@reservation.points)
 			redirect_to @restaurant
 		else
 			render 'new'

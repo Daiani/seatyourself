@@ -24,9 +24,9 @@ class Reservation < ActiveRecord::Base
 	private
 
 			def restaurant_open
-					if (self.datetime.hour < self.restaurant.opening_hour || self.datetime.hour > self.restaurant.closing_hour)
-									errors.add(:datetime, "Our hours are 11am to 8pm.")
-					end
+					# if (self.datetime.hour < self.restaurant.opening_hour || self.datetime.hour > self.restaurant.closing_hour)
+					# 				errors.add(:datetime, "Our hours are 11am to 8pm.")
+					# end
 			end
 
 			def in_the_future
