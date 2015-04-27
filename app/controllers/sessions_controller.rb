@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user= User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id]=user.id
-      redirect_to frontpage_index_url, notice: "Logged in!"
+      redirect_to restaurants_url, notice: "Logged in!"
     else
       render "new"
     end

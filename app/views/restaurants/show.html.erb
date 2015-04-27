@@ -31,5 +31,20 @@
 	<%= @restaurant.closing_hour %>
 </p>
 
+<h1>Reservation Request for <%= @restaurant.name %></h1>
+<%= form_for [@restaurant, @reservation] do |f| %>
+
+
+  <%= f.label :party_size %>
+  <%= f.number_field :party_size, value: 2 %>
+
+  <%= f.label :datetime %>
+  <%= f.datetime_select :datetime %></br>
+
+
+  <%= f.submit class: "btn btn-large btn-success" %>
+
+  <% end %>
+
 
 
