@@ -1,34 +1,16 @@
-<h1>Restaurants</h1>
+<h1>Listing Restaurants</h1>
 
-<%= form_for(@restaurants) do |f| %>
-  <% if @restaurants.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@restaurants.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+<%= link_to 'New Restaurant', new_restaurant_path %>
 
-      <ul>
-      <% @restaurants.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+<div id="restaurants">
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to restaurant_path(restaurant.id) do %>
+      <h2>
+        <%= number_to_currency(restaurant.formatted_price) %>
+        <%= restaurant.name %>
+      </h2>
+    <% end %>
+    <!-- keeps the description to 100 characters or less -->
+    <p><%= truncate(restaurant.category length: 40) %></p>
   <% end %>
-  
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_area :category%>
-  </div>
-  <div class="field">
-    <%= f.label :price_range%><br />
-    <%= f.number_field :price_range%>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<% end %>
+</div>
