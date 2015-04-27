@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <%= link_to 'Make Reservation', restaurants_reservation_path(@restaurant) %>
+
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
