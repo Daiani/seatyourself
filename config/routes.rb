@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'frontpage#index'
 
   resources :frontpage
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :index]
   resources :reservations
+  resources :sessions, only: [:new, :create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
