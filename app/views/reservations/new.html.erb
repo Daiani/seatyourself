@@ -1,6 +1,6 @@
 <h1>Reservation Request for <%= @restaurant.name %></h1>
 <%= form_for [@restaurant, @reservation] do |f| %>
-	<%= render 'shared/errors', object: @reservation %>
+
 
 	<%= f.label :party_size %>
 	<%= f.number_field :party_size, value: 2 %>
