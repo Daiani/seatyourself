@@ -1,0 +1,7 @@
+<h1>Reservation index</h1>
+
+<div id="reservations">
+<% @reservations.each do |reservation| %> 
+<%= reservation.id %>
+<%= reservation.party_size %>
+<% end %>
