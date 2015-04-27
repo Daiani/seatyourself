@@ -18,18 +18,6 @@ presence: true,
   	seats_left(datetime) <= requested_party_size
 end
 
-def opening_hour
-	 self.opening_time.opening_hour
-
-	end
-
-
-	def closing_hour
-		self.closing_time.closing_hour
-
-	end
-
-
 	private
 
 	def seats_left(datetime)
