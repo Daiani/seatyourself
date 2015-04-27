@@ -2,6 +2,11 @@
 
 <div id="reservations">
 <% @reservations.each do |reservation| %> 
-<%= reservation.id %>
-<%= reservation.party_size %>
+<p>Reservation ID:<%= reservation.id %></p>
+<p>Reservation Party-size:<%= reservation.party_size %></p>
+<p>Reservation Datetime:<%= reservation.datetime %></p>
+
+
+
+
 <% end %>
