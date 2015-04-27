@@ -7,3 +7,5 @@ class RestaurantsController < ApplicationController
   	   @restaurants = Restaurant.find(params[:id])
   end
 end
+
+

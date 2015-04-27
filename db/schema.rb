@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150424192734) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
-    t.string   "encrypted_password"
+    t.string   "password_digest"
     t.string   "reset_password_token"
     t.string   "reset_password_sent_at"
     t.datetime "remember_created_at"
