@@ -6,11 +6,10 @@
   <% @restaurants.each do |restaurant| %>
     <%= link_to restaurant_path(restaurant.id) do %>
       <h2>
-        <%= number_to_currency(restaurant.formatted_price) %>
+        <%= number_to_currency(restaurant.price_range) %>
         <%= restaurant.name %>
       </h2>
     <% end %>
-    <!-- keeps the description to 100 characters or less -->
-    <p><%= truncate(restaurant.category length: 40) %></p>
+    <p><%= restaurant.category %></p>
   <% end %>
 </div>

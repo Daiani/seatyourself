@@ -2,7 +2,9 @@ class ReservationsController < ApplicationController
 	before_filter :load_restaurant
 
 	def index
+
 		@reservations = Reservation.where(restaurant_id: @restaurant.id, datetime: (DateTime.now)..(DateTime.now + 7)
+
 	end
 
 	def new
@@ -37,8 +39,13 @@ class ReservationsController < ApplicationController
 		DateTime.civil_from_format(
 			:local,
 			params[:reservation][:date].to_date.year,
+<<<<<<< HEAD
 			params[:reservation][:date].to_date.month
 			params[:reservation][:date].to_date.day
+=======
+			params[:reservation][:date].to_date.month,
+			params[:reservation][:date].to_date.day,
+>>>>>>> 4b2eb1d3d07f7b93cdffd4ac188e5857734d98fa
 			params[:reservation][:date].to_time.hour,
 			00
 			)
