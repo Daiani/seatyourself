@@ -4,9 +4,15 @@ has_many :reservations
 has_many :users, through: :reservations
 
 
+
+
 validates :name,
 presence: true,
   length: { maximum: 40 }
+
+
+
+
 
   def full?(datetime, requested_party_size)
   	seats_left(datetime) <= requested_party_size

@@ -1,3 +1,15 @@
-<h1>Restaurants</h1>
+<h1>Listing Restaurants</h1>
 
+<%= link_to 'New Restaurant', new_restaurant_path %>
 
+<div id="restaurants">
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to restaurant_path(restaurant.id) do %>
+      <h2>
+        <%= number_to_currency(restaurant.price_range) %>
+        <%= restaurant.name %>
+      </h2>
+    <% end %>
+    <p><%= restaurant.category %></p>
+  <% end %>
+</div>
