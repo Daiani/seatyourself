@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user=User.new(user_params)
     if @user.save
-      redirect_to frontpage_index_url, notice: "Created user"
+      redirect_to restaurants_url, notice: "Created user"
     else
       render "new"
     end
