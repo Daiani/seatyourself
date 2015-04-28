@@ -2,8 +2,6 @@
 
 <h2>Select a Restaurant</h2>
 
-<p><%= link_to 'New Restaurant', new_restaurant_path %>
-</p>
 <div id="restaurants">
   <% @restaurants.each do |restaurant| %>
     <%= link_to restaurant_path(restaurant.id) do %>
@@ -15,3 +13,5 @@
     <p><%= restaurant.category %></p>
   <% end %>
 </div>
+<p><%= link_to 'New Restaurant', new_restaurant_path %>
+</p>
