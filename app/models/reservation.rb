@@ -4,8 +4,9 @@ class Reservation < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :restaurant
 
-	validates :user_id, :restaurant_id,
-				presence: true
+	delegate :name, to: :restaurant
+
+	validates :user_id, :restaurant_id, :datetime, presence: true
 
 	validates :party_size,
 				inclusion: { in: 2..20, message: "No more than 20, please!"}
