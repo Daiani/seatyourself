@@ -42,8 +42,8 @@ class Reservation < ActiveRecord::Base
 			end
 
 			def restaurant_not_full
-					if self.restaurant.full?(self.datetime, self.party_size)
-									errors.add(:datetime, "We're full at that time.")
+			# 		if self.restaurant.full?(self.datetime, self.party_size)
+			# 						errors.add(:datetime, "We're full at that time.")
 					end
-			end	
+			# end	
 end
