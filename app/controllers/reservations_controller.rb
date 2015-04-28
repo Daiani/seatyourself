@@ -1,10 +1,9 @@
 class ReservationsController < ApplicationController
-	before_filter :load_restaurant
+	before_filter :load_restaurant, except: [:index]
 
 	def index
 
-		@reservations = Reservation.where(restaurant_id: @restaurant.id, datetime: (DateTime.now)..(DateTime.now + 7))
-
+		@reservations = Reservation.all
 	end
 
 	def new
