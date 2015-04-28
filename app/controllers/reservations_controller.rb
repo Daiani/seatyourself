@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
 
 		 if @reservation.save
 		# current_user.add_points(@reservation.points)
-		 	redirect_to @restaurant
+		 	redirect_to restaurants_url, notice: "Your reservation has been created"
 		 else
 		 	render 'new'
 		 end
