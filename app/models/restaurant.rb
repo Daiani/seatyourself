@@ -3,17 +3,8 @@ class Restaurant < ActiveRecord::Base
 has_many :reservations
 has_many :users, through: :reservations
 
-
-
-
-validates :name,
-presence: true,
-  length: { maximum: 40 }
-
-
-
-
-
+validates :name, presence: true, length: { maximum: 40 }
+validates :opening_hour, :closing_hour, :capacity, presence: true
 #   def full?(datetime, requested_party_size)
 #   	seats_left(datetime) <= requested_party_size
 # end
