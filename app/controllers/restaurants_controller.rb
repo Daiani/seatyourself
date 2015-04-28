@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   	@restaurants = Restaurant.all
   end
 
-  def show
+  def show                                                      
   	@restaurant = Restaurant.find(params[:id])
     @reservation = Reservation.new
   end
@@ -22,21 +22,6 @@ class RestaurantsController < ApplicationController
   		render :new
   	end
   end
-
-  def edit
-    @restaurants = Restaurant.find(params[:id])
-
-  end
-  
-
-  def destroy
-    @restaurants = Restaurant.find(params[:id])
-    @restaurants.destroy
-    redirect_to restaurants_path
-
-  end
-  
-
   
   private
   def restaurants_params

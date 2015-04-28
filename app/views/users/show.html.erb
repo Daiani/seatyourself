@@ -1,2 +1,37 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>User Profile</h1>
+
+<div class="user">
+  
+  <h1>
+    <%= @user.name %>
+  </h1> 
+
+  <table>
+  <tr>
+    <td>Email:</td>
+    <td><%= @user.email %></td>
+  </tr>
+  <tr>
+    <td>Phone number:</td>
+    <td><%= @user.phone_number %></td>
+  </tr>
+  </table>
+
+
+   <% @user.reservations.each do |reservation| %>
+    <p>
+      <div class="reservation_show">
+        Reservation For: <%= reservation.name %>
+      </div>
+
+      <div class="reservation_show">
+        Party Size: <%= reservation.party_size %>
+      </div>
+
+      <div class="reservation_show">
+        On <%= reservation.formatted_time %>
+      </div>
+    </p>
+   <% end %>
+
+

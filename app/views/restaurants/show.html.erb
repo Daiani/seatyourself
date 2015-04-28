@@ -32,6 +32,7 @@
 	<%= @restaurant.closing_hour %>
 </p>
 
+<<<<<<< HEAD
 
 <h3>Reservation Request for <%= @restaurant.name %></h3>
 
@@ -44,22 +45,32 @@
 <h1>Reservation Request for <%= @restaurant.name %></h1>
 <%= form_for [@restaurant, @reservation] do |f| %>
 
+=======
 
+<h1>Reservation Request for <%= @restaurant.name %></h1>
+>>>>>>> de7eb32e678fe48962eb20779c7a8828c24b0e50
+
+<%= form_for [@restaurant, @reservation], html: {class: 'reservation'} do |f| %>
   <%= f.label :party_size %>
   <%= f.number_field :party_size, value: 2 %>
-<br/>  
-<br/>
+  <br/>  
+  <br/>
   <%= f.label :date %>
   <%= f.date_field :date %></br>
-<br/>
+  <br/>
   <%= f.label :time %>
   <%= f.time_field :time %></br>
-<br/>
+  <br/>
   <%= f.submit class: "btn btn-large btn-success" %>
+<<<<<<< HEAD
   </form>
   <% end %>
   <br/>
 <div class="buttons">
+=======
+<% end %>
+
+>>>>>>> de7eb32e678fe48962eb20779c7a8828c24b0e50
   <% if current_user %>
   <button><%= link_to "Edit", edit_restaurant_path(@restaurant) %></button> | <button><%= link_to "Delete", @restaurant, method: :delete, data: {confirm: "Are you sure you want to delete this restaurant?"} %></button>
 <% end %>
