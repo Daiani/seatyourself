@@ -31,6 +31,9 @@
 	<%= @restaurant.closing_hour %>
 </p>
 
+
+
+
 <h1>Reservation Request for <%= @restaurant.name %></h1>
 <%= form_for [@restaurant, @reservation] do |f| %>
 
@@ -47,6 +50,12 @@
   <%= f.submit class: "btn btn-large btn-success" %>
 
   <% end %>
+
+  <% if current_user %>
+| <button><%= link_to "Edit", edit_restaurant_path(@restaurant) %></button> | <button><%= link_to "Delete", @restaurant, method: :delete, data: {confirm: "Are you sure you want to delete this restaurant?"} %></button>
+<% end %>
+</p>
+
 
 
 

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :frontpage
 
 
- resources :restaurants, only: [:new, :create, :index, :show] do
+ resources :restaurants do
       resources :reservations
 
   end
