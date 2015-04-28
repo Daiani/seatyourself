@@ -19,12 +19,12 @@ class ReservationsController < ApplicationController
 			user_id: current_user.id
 			)
 
-		if @reservation.save
-			# current_user.add_points(@reservation.points)
-			redirect_to @restaurant
-		else
-			render 'new'
-		end
+		 if @reservation.save
+		# current_user.add_points(@reservation.points)
+		 	redirect_to @restaurant
+		 else
+		 	render 'new'
+		 end
 	end
 
 	def destroy

@@ -14,16 +14,16 @@ presence: true,
 
 
 
-  def full?(datetime, requested_party_size)
-  	seats_left(datetime) <= requested_party_size
-end
+#   def full?(datetime, requested_party_size)
+#   	seats_left(datetime) <= requested_party_size
+# end
 
 	private
 
-	def seats_left(datetime)
-		  self.capacity - seats_taken(datetime) 
+	# def seats_left(datetime)
+	# 	  self.capacity - seats_taken(datetime) 
 
-	end
+	# end
 
 	def seats_taken(datetime)
 
