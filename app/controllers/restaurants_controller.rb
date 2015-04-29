@@ -10,7 +10,7 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-  	@restaurants = Restaurant.new
+  	@restaurant = Restaurant.new
   end
 
   def edit
@@ -41,7 +41,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @restaurant.destroy
     @restaurant.reservations.each do |variable|
-      variable.reservation.destroy
+      variable.destroy
     end
     redirect_to restaurants_path
   end
