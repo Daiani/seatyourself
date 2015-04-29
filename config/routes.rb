@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root 'restaurants#index'
+  root 'frontpage#index'
 
   resources :frontpage
 
